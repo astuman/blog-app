@@ -1,0 +1,138 @@
+*{
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+
+}
+.container{
+  display:flex;
+
+}
+main{
+  width:100%;
+  padding:20px;
+}
+.sidebar{
+  background:#000;
+  color:#fff;
+  height: 100vh;
+  width:100px;
+  gap: 10px;
+  overflow: hidden;
+
+}
+.top_section{
+  display:flex;
+  align-items:center;
+  padding:20px;
+}
+.bars{
+  display:flex;
+  font-size:25px;
+  margin-left: 10px;
+  
+}
+.link{
+  display:flex;
+  color:#fff;
+  padding: 10px 15px;
+  padding-top: 25px;
+  transition: all;
+  gap: 15px;
+}
+.link:hover{
+  background: #fdeaea;
+  color:#0e0202;
+  transition:all 0.3s;
+ 
+}
+.active{
+  background:#fdeaea;
+  color:black;
+}
+.icon, .link_text{
+  font-size: 20px;
+
+}
+.Rows{
+  display: flex;
+}
+.icon{
+  gap: 60px;
+}
+.posts{
+  padding-left: 30px;
+  padding-top: 30px;
+  padding-bottom: 10px;
+  padding-right: 30px;
+  font-size: 20px;
+  border: solid #000 1px;
+  border-radius: 5px;
+
+}
+.homPageWelcome{
+  text-align: center;
+  font-size: 30px;
+  padding-bottom: 30px;
+  padding-top: 20px;
+  text-transform: uppercase;
+  border: solid #000 1px;
+  background-color:#000;
+  color:white;
+
+}
+.postTitle{
+  background-color: #c0c0c0;
+  color: rgb(0, 0, 0);
+  text-align: left;
+  text-decoration: underline;
+  
+}
+.postTitleContent{
+
+  font-style: italic;
+}
+.postId{
+  text-align: left;
+  text-transform: uppercase;
+}
+.postIdContent{
+  text-align: center;
+
+}
+.postBody{
+  text-align: left;
+  padding-top: 10px;
+}
+.postBodyContent{
+  padding-top: 5px;
+  padding-left: 5px;
+  font-style: italic;
+}
+.mycontainer{
+  text-align: center;
+  font-size:30px;
+  word-spacing: 2px;
+
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 15px;
+  }
+  .grid-item{
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    margin-top: 25px;
+    font-size: 20px;
+    text-align: center;
+    max-width: 80%;
+    transition-property: all;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out;
+    transition-delay: 0s;
+    border-radius: 5px;
+    border: 0.1px solid #e6e5e5;
+  }
