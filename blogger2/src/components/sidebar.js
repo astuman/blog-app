@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import '../App.css'
 
-import { FaBars, FaThList, FaUserAlt, FaTh, FaStickyNote } from 'react-icons/fa'
+import { FaBars, FaThList, FaUserAlt, FaTh, FaAddressBook } from 'react-icons/fa'
 import { NavLink } from 'react-router-dom';
 
 
@@ -35,9 +35,9 @@ const Sidebar = ({children}) =>{
             icon:<FaThList />
         },
         {
-            path:'/totos',
+            path:'/todos',
             name:"Todos",
-            icon:<FaThList />
+            icon:<FaAddressBook />
         },
         {
             path:'/users',

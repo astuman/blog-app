@@ -13,13 +13,11 @@ import Comments from './components/pages/comments';
 import Photos from './components/pages/photos';
 import Todos from './components/pages/todos';
 import Users from './components/pages/users';
-import {Counter} from './features/counter/counter';
 
 
 function App() {
   return (
     <BrowserRouter>
-    <Counter />
     <Header />
     <Sidebar>
         <Routes>

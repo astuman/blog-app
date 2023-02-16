@@ -17,6 +17,7 @@ const Comments = () => {
     
     <div  className='ui container' style={{backgroundColor:'#d9dbdb'}}>
     <div className='homPageWelcome'>Wel come to Blogs</div>
+    <h2>Comments</h2>
     {
             homePagePost.map(post => 
         ( <div className='posts' key={post.id}>ID: {post.id}<br/>Name: {post.name}<br/>Email: {post.email}<br/>Content: <br/>{post.body}</div>

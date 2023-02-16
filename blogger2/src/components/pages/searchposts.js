@@ -1,15 +1,17 @@
-import React from 'react';
+import { Input } from '@material-ui/icons';
+import axios from 'axios';
+import React, { useState, useEffect } from 'react';
+import { Button } from 'semantic-ui-react';
+
 
 const Searchposts = () => {
-    return (
-        <div>
+
     const [posts, setPosts] = useState([]);//to search all from posts
     const [id, setId] = useState([]);//to search by id on text field using onChange
     const [searchButtonId, setSearchButtonId] = useState([]);//define for search button by ID
 
     
 
-    //fetch posts using get method using axios
     useEffect(() =>{
         axios.get(`https://jsonplaceholder.typicode.com/posts/${searchButtonId}`)
         .then(res =>{
@@ -33,10 +35,9 @@ const Searchposts = () => {
         }
         </ul> */}
         <div className='ui container'>
-        <button style={{fontSize:'30px'}} onClick={handleSearchId}>Add Post</button>
         <h2>View posts by searching by id or title</h2>
-        <input type='text' placeholder='write your post Id here' value={id} onChange={e =>setId(e.target.value)} />
-        <button onClick={handleSearchId}>Search ID</button>
+        <Input type='text' placeholder='write post id' value={id} onChange={e =>setId(e.target.value)} />
+        <Button onClick={handleSearchId}>Search ID</Button>
         <div className='postId'>
                 Post ID: {posts.id}
             </div>
@@ -54,8 +55,6 @@ const Searchposts = () => {
             
         </div>
 
-        </div>
-    );
         </div>
     );
 }

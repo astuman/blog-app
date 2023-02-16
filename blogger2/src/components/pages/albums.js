@@ -19,7 +19,9 @@ const Albums = () => {
     return (
     <div className='ui container'>
     <div className='homPageWelcome'>Wel come to Blogs</div>
+    <h2>Albums</h2>
     <div className='grid-container'>
+
     
     {
         albums.map(album =>(
