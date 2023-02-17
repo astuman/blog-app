@@ -1,20 +1,13 @@
-import { configureStore, createStore } from '@reduxjs/toolkit';
-import counterReducer from '../features/counter/counterSlice';
-import { applyMiddleware, compose } from '@reduxjs/toolkit';
-import thunk from 'redux-thunk'
-import rootReducer from '/reducer';
+import { applyMiddleware, compose, configureStore, createStore } from '@reduxjs/toolkit';
+import { rootReducer } from '../reducer';
+import { Middleware } from '@reduxjs/toolkit';
+import thunk from 'redux-thunk';
+import { FETCH_POSTS } from '../actions/types';
+import { PostReducer } from '../reducer/postReducer';
 
-const initialState = {}
-const middleware = [thunk]
+ const Store = createStore (rootReducer);
 
- const store = createStore (
-  rootReducer, initialState,
-  compose(applyMiddleware(...middleware))
-);
-// //23162679 ->
-// // export const configureStore({
-// //   reducer: {
-// //     counter: counterReducer,
-// //   },
-// // });
-export default store;
+
+export default Store;
+const store = createStore(rootReducer)
+console.log('fvdd',store.dispatch(PostReducer.FETCH_POSTS))

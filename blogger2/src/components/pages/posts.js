@@ -3,21 +3,20 @@ import axios from 'axios';
 import { useState, useEffect } from 'react';
 import PostForm from './postForm';
 import {SearchPostModal} from '../modals/searchPostModal'
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchPosts } from '../../actions/actions';
+import { PostReducer } from '../../reducer/postReducer';
+import Store from '../../store/store';
+
 
 const Posts = () => {
-    const [posts, setPost] = useState([])
-
-
+    const dispatch = useDispatch();
+    const posts = useSelector(state => state.PostReducer.posts)
     useEffect(() =>{
-        axios.get(`https://jsonplaceholder.typicode.com/posts/`)
-        .then(res =>{
-            setPost(res.data)
-        })
-        .catch(err =>{
-            console.log(err)
-        })
-    })
-    //modale start here
+        dispatch(fetchPosts)
+    },[])
+    //modale start here()
+
     return (
     <div  className='ui container' style={{backgroundColor:'#d9dbdb'}}>
     <div className='homPageWelcome'>Wel come to Blogs</div>
