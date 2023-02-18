@@ -1,23 +1,19 @@
 import React, {useState, useEffect} from 'react';
 import { Grid, Image } from 'semantic-ui-react'
 import axios from 'axios';
-import { useDispatch } from 'react-redux';
-import { fetchPosts } from '../../actions/actions';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchPosts, fetchAlbums} from '../../actions/actions';
 
 const Albums = () => {
     const dispatch = useDispatch();
-    const [albums, setAlbums] = useState([1]);
 
     useEffect(() =>{
-        //fetchPosts
-        axios.get(`https://jsonplaceholder.typicode.com/albums/`)
-        .then(res =>{
-            setAlbums(res.data)
-        })
-        .catch(err =>{
-            console.log(err)
-        })
-    })
+        dispatch(fetchAlbums())
+        
+    },[dispatch])
+    const albums = useSelector(state => state.rootPost.postedItems)
+
+    
 
 
     return (

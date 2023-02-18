@@ -1,19 +1,47 @@
 import axios from 'axios'
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { FETCH_POSTS, NEW_POST } from './types'
+import Store from '../store/store'
+import { FETCH_POSTS, FETCH_ALBUMS, NEW_POST, DELETE_POST } from './types'
 
 
-const dispatch = useDispatch
-export const fetchPosts = () => dispatch =>{
-    const [posts, setPost] = useState([])
-    axios.get(`https://jsonplaceholder.typicode.com/posts`)
+
+export const fetchPosts = () => async dispatch =>{
+    // const [posts, setPost] = useState([])
+    try{
+        axios.get(`https://jsonplaceholder.typicode.com/posts`)
         .then(res =>{
-            setPost(res.data)
-        })       
-           return ({
+            dispatch({
                 type:FETCH_POSTS,
-                payload:posts
-           })
+                payload: res.data
+            })
+        }) 
+
+    } catch(err){
+        console.log(err)
+    }   
 }
 
+export const fetchAlbums = () => async dispatch =>{
+    try{
+        axios.get(`https://jsonplaceholder.typicode.com/albums`)
+        .then(res =>{
+            dispatch({
+                type:FETCH_ALBUMS,
+                payload: res.data
+            })
+        }) 
+
+    } catch(err){
+        console.log(err)
+    }   
+}
+
+
+export const deletePost = (id) => {
+return ({
+        type:DELETE_POST,
+        payload:id
+    })
+
+}
